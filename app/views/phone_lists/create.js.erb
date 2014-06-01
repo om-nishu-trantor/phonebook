@@ -1,0 +1,12 @@
+<% if @phone_list.errors.any? %>
+  $("#modal-space").html("<%= escape_javascript(render('modal')) %>");
+  $('#new-form-modal').modal('show');
+  $('.success-msg').hide();
+<% else %>
+  $("#phone-list tbody").append("<%= j render :partial => "new_phone_list_item", :locals => {:phone_list => @phone_list } %>");
+  $('#errors').remove();
+  $('.success-msg').show();
+  <% if @phone_list.created_at == @phone_list.updated_at %>
+    $("#phone_list_phone, #phone_list_name").val("");
+  <% end %>
+<% end %>

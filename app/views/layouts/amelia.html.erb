@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phonebook | Manage your contacts</title>
+    <%= stylesheet_link_tag    "amelia", :media => "all" %>
+    <%= javascript_include_tag "amelia" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render :partial => 'layouts/header' %>
+    <div class="container">
+      <div class="row-fluid">
+        <%= render :partial => 'layouts/flash_message' %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

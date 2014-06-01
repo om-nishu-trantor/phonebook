@@ -1,0 +1,36 @@
+<div class="bs-component">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <%= link_to "Phonebook", root_path, :class => "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to new_phone_list_path, remote: true, "data-toggle" => "modal", "data-target" => "#new-form-modal", id: "add-new-contact" do %>
+            <i class="glyphicon glyphicon-plus"></i> Add Contact
+          <% end %>
+        </li>
+        <li>
+          <%= link_to download_text_file_phone_lists_path do %>
+            <i class="glyphicon glyphicon-download-alt"></i> Download Phonebook
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "javascript:$('#upload-pb').modal('show');" do %>
+            <i class="glyphicon glyphicon-upload"></i> Upload Phonebook
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_all_phone_lists_path, method: :delete, data: { confirm: "It'll delete all the contacts from your phonebook. Are you sure?" } do %>
+            <i class="glyphicon glyphicon-trash"></i> Delete All
+          <% end %>
+        </li>
+        <li>
+          <%= link_to root_path, :id => 'guest' do %>
+            <i class="glyphicon glyphicon-user"></i> Hi buddy!
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

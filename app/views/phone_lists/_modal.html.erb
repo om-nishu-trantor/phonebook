@@ -1,0 +1,44 @@
+<div class="modal fade" id="new-form-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= form_for @phone_list, html: { :multipart => true }, remote: true, :class => "form-horizontal" do |f| %>
+  <% if @phone_list.errors.any? %>
+  <div class="alert alert-dismissable alert-danger" id="errors">
+    <button type="button" class="close" data-dismiss="alert">
+      ×
+    </button>
+    <ul class="list-unstyled">
+      <% @phone_list.errors.full_messages.each do |message| %>
+      <li>
+        <strong><%= message %></strong>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel"><%= @phone_list.persisted? ? 'Update' : 'Add' %> Contact</h4>
+      </div>
+
+      <%= render :partial => "form", :locals => {:f => f} %>
+
+      <div class="modal-footer">
+        <div class="form-group">
+          <div class="col-lg-6 sm-wrapper">
+            <span class="success-msg">Changes has been saved successfully</span>
+          </div>
+          <div class="col-lg-6">
+            <%= f.submit "Save Changes", :data => {:disable_with => "Saving..."}, :class => "btn btn-primary" %>
+            <%= link_to "Cancel", root_path, :class => "btn btn-default" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>

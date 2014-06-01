@@ -1,0 +1,22 @@
+<h1 class="text-center">Listing Your Contacts</h1>
+<hr/>
+<table id="phone-list" class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th colspan="3" class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render :partial => "new_phone_list_item", :collection => @phone_lists, :as => :phone_list %>
+  </tbody>
+</table>
+<br>
+
+<div class="text-center">
+  <%= will_paginate @phone_lists, renderer: BootstrapPagination::Rails %>
+</div>
+
+<%= render :partial => "upload_file" %>
+<div id="modal-space"></div>

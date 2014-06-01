@@ -1,0 +1,31 @@
+<div class="modal fade" id="upload-pb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= form_tag upload_phone_lists_path, :multipart => true, :class => "form-horizontal" do %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title">Upload Phonebook (.txt extention)</h4>
+      </div>
+      <fieldset>
+        <div class="col-lg-10 file-upload">
+          <div class="form-group">
+            <%= label_tag :upload, "Select File:", :class => "control-label" %>
+            <%= file_field 'upload', 'datafile', :class => 'form-control' %>
+          </div>
+        </div>
+      </fieldset>
+      <div class="modal-footer">
+        <div class="form-group">
+          <div class="col-lg-11">
+            <%= submit_tag "Upload", :data => {:disable_with => "Uploading..."}, :class => "btn btn-primary" %>
+            <%= link_to "Cancel", root_path, :class => "btn btn-default" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>

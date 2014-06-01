@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @phone_list.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @phone_list.phone %>
+</p>
+
+<%= link_to 'Edit', edit_phone_list_path(@phone_list) %> |
+<%= link_to 'Back', phone_lists_path %>

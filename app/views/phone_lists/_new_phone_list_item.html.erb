@@ -1,0 +1,15 @@
+<tr>
+  <td><%= phone_list.name %></td>
+  <td><%= phone_list.phone %></td>
+  <td>
+  <div class="text-center">
+    <div class="btn-group">
+      <%= link_to edit_phone_list_path(phone_list), :remote => true, :class => 'btn btn-warning' do %>
+        <i class="glyphicon glyphicon-pencil"></i> Edit
+      <% end %>
+      <%= link_to phone_list, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' do %>
+        <i class="glyphicon glyphicon-trash"></i> Destroy
+      <% end %>
+    </div>
+  </div>
+</tr>

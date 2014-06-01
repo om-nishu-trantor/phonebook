@@ -1,0 +1,31 @@
+// Place all the styles related to the phone_lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table#phone-list {
+  td {
+    width: 33%;
+    vertical-align: middle;
+  }
+}
+
+a, a:hover {
+  text-decoration: none !important;
+}
+
+.navbar-brand {
+  font-size: 2em;
+}
+
+#new-form-modal .success-msg {
+  display: none;
+  color: rgb(85, 241, 64);
+}
+
+.sm-wrapper {
+  padding-top: 1.5%;
+}
+
+.file-upload {
+  margin-left: 3em;
+}
