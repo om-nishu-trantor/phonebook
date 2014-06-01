@@ -1,9 +1,10 @@
 source 'http://rubygems.org'
 
+# Use pg gem for Active::Record
+gem 'pg'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,7 +41,8 @@ group :development, :test do
   gem "capybara"
   gem "guard-rspec"
   gem 'selenium-webdriver'
+  gem 'sqlite3'
+  gem 'debugger'
 end
 
 # Use to debug the application
-gem 'debugger', group: [:development, :test]
